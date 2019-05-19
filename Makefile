@@ -1,23 +1,22 @@
 
-LIB = libft.a
+NAME = libft.a
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -c
-SRC = ft_bzero.c ft_putchar.c ft_putstr.c ft_strlen.c ft_strcmp.c ft_memcpy.c 
-OFILE = $(patsubst$(SRC:%.c%.o)
+CFLAGS = -Wall -Werror -Wextra 
+#SRC = ft_bzero.c ft_putchar.c ft_putstr.c ft_strlen.c ft_strcmp.c ft_memcpy.c 
+SRC = $(wildcard *.c)
+#OFILE := $(patsubst %$(SRC) = .c,%.o,$(*.c))
+OFILE = $(SRC:.c=.o)
 
-all: $(NAME)
-
-$(NAME): $(CON)
-	ar rc $(LIB) OFILE 
-
-$(CON):
-	$(CC) $(CFLAGS) $(SRC)
+all: cofile
+	ar rc $(NAME) $(OFILE)
+cofile:
+	gcc -c $(SRC) $(CFLAGS) 
 
 clean:
 	rm *.o
 
 fclean: clean
-	rm $(LIB)
+	rm $(NAME)
 
 re: fclean all
