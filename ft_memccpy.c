@@ -3,15 +3,17 @@
 void		*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	int i;
+	/*variables to hold dest and src pointers*/
 	unsigned char *d;
 	unsigned char *e;
 
 	i = 0;
 	d = (unsigned char *)src;
 	e = (unsigned char *)dest;
-	while(n != 0 && d[i] != '\0')
+	while(n != 0)
 	{
-		if ((int)d[i] == (int)c)
+		/*checking if the char in d[i] matches the char to stop copy*/
+		if (d[i] == (unsigned char)c)
 		{
 			return (e);
 		}
