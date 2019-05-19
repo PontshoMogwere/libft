@@ -9,9 +9,9 @@ SRC = $(wildcard *.c)
 OFILE = $(SRC:.c=.o)
 
 all: cofile
-	ar rc $(NAME) $(OFILE)
+	ar rc $(NAME) $(OFILE) 
 cofile:
-	gcc -c $(SRC) $(CFLAGS) 
+	gcc -c $(CFLAGS) $(SRC) 
 
 clean:
 	rm *.o
