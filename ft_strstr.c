@@ -1,5 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/20 10:41:43 by pmogwere          #+#    #+#             */
+/*   Updated: 2019/05/20 10:41:54 by pmogwere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
 
 char		*ft_strstr(const char *haystack, const char *needle)
 {
@@ -9,35 +19,22 @@ char		*ft_strstr(const char *haystack, const char *needle)
 
 	i = 0;
 	ret = 0;
-	//c = (char *)malloc(sizeof(char) * ft_atrlen(haystack));
 	c = ft_strdup(haystack);
 	if (needle == NULL)
 	{
-		return (haystack);
+		return (c);
 	}
 	while(c[i] != '\0')
 	{
 		if (c[i] == needle[0])
 		{
-			ret = ft_strcmp(c[i], needle);
+			ret = ft_strcmp(&c[i], needle);
 			if (ret == 0)
 			{
-				return (c);
+				return (&c[i]);
 			}
 		}
 		i++;
 	}
 	return (NULL);
-}
-
-int main () {
-   const char haystack[20] = "TutorialsPoint";
-   const char needle[10] = "Point";
-   char *ret;
-
-   ret = ft_strstr(haystack, needle);
-
-   printf("The substring is: %s\n", ret);
-
-   return(0);
 }
