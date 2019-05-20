@@ -5,21 +5,24 @@ char		*ft_strstr(const char *haystack, const char *needle)
 {
 	int i;
 	int ret;
+	char *c;
 
 	i = 0;
 	ret = 0;
+	//c = (char *)malloc(sizeof(char) * ft_atrlen(haystack));
+	c = ft_strdup(haystack);
 	if (needle == NULL)
 	{
-		return (*haystack);
+		return (haystack);
 	}
-	while(haystack[i] != '\0')
+	while(c[i] != '\0')
 	{
-		if (haystack[i] == needle[0])
+		if (c[i] == needle[0])
 		{
-			ret = ft_strcmp(&haystack[i], needle);
+			ret = ft_strcmp(c[i], needle);
 			if (ret == 0)
 			{
-				return ((haystack[i]);
+				return (c);
 			}
 		}
 		i++;
