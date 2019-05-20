@@ -14,7 +14,7 @@ void		*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void		*ft_memchr(const void *s, int c, size_t);
 char		*ft_strdup(const char *s);
 int		ft_tolower(int c);
-int		ft_toupper(int c0;
+int		ft_toupper(int c);
 
 
 #endif
