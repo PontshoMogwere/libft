@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/20 13:29:33 by pmogwere          #+#    #+#             */
+/*   Updated: 2019/05/20 13:29:47 by pmogwere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #ifndef LIBFT_FILE
 #define LIBFT_FILE
 #include <string.h>
@@ -22,4 +33,5 @@ int		ft_isascii(int c);
 int		ft_isalnum(int c);
 int		ft_strncmp(const char * s1, const char *s2, size_t n); 
 char		*ft_strstr(const char *haystack, const char *needle);
+char		*ft_strchr(const char *s, int c);
 #endif
