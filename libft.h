@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:29:33 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/21 09:04:09 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/21 14:44:58 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_FILE
@@ -36,7 +36,10 @@ char		*ft_strstr(const char *haystack, const char *needle);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
 char		*ft_strcat(char *restrict s1, const char *restrict s2); 
-char		*ft_strncat(char *restrict s1, const *restric s2, size_t n);
+char		*ft_strncat(char *restrict s1, const char *restrict s2, size_t n);
+char		*ft_strcpy(char *dst, const char *src);
+char		*ft_strncpy(char *dst, const char *src, size_t len);
+
 
 
 #endif
