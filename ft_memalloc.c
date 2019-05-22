@@ -6,11 +6,15 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:56:37 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/21 15:04:19 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/22 08:30:56 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 void		*ft_memalloc(size_t size)
 {
-	
+	void *s;
+
+	s = (void *)malloc(size);
+	return (ft_memset(s, '0', size));
 }

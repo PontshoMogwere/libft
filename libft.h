@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:29:33 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/21 14:44:58 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/22 07:34:21 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_FILE
@@ -20,6 +20,7 @@ void		ft_putchar(char c);
 void		ft_putstr(char *str);
 int		ft_strcmp(const char *s1, const char *s2);
 size_t		ft_strlen(const char *s);
+void		*ft_memset(void *str, int c, size_t len);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
 void		*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void		*ft_memchr(const void *s, int c, size_t);
