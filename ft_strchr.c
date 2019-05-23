@@ -6,15 +6,16 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:11:33 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/20 13:28:18 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/23 11:35:22 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 char		*ft_strchr(const char *s, int c)
 {
-	int i;
-	char *d;
+	int		i;
+	char	*d;
 
 	i = 0;
 	d = ft_strdup(s);
@@ -24,7 +25,7 @@ char		*ft_strchr(const char *s, int c)
 		{
 			return (&d[i]);
 		}
-		i++;	
+		i++;
 	}
 	return (NULL);
 }

@@ -6,9 +6,10 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:46:50 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/20 13:46:54 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/23 11:21:56 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 size_t		ft_strlen(const char *s)
@@ -16,7 +17,7 @@ size_t		ft_strlen(const char *s)
 	int i;
 
 	i = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		i++;
 	}

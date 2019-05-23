@@ -6,15 +6,16 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:36:03 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/20 13:36:09 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/23 12:42:13 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_putstr(char *str)
 {
 	int	i;
-	
+
 	i = 0;
 	while (str[i] != '\0')
 	{

@@ -6,25 +6,26 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 10:41:11 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/20 13:47:31 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/23 11:39:07 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int i;
-	int ret;
-	char *c;
+	int		i;
+	int		ret;
+	char	*c;
 
 	i = 0;
 	ret = 0;
 	c = ft_strdup(haystack);
-	if(needle == NULL)
+	if (needle == NULL)
 	{
 		return (c);
 	}
-	while(c[i] != '\0')
+	while (c[i] != '\0')
 	{
 		if (c[i] == needle[0])
 		{

@@ -6,21 +6,17 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:43:14 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/20 13:43:22 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/23 12:26:51 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
+#include <stdio.h>
 
 int	ft_isprint(int c)
 {
-	if (c >= '\t' && c <= '\r')
-	{
-		return (1);
-	}
 	if (c >= ' ' && c <= '~')
 	{
 		return (1);
 	}
 	return (0);
-
 }

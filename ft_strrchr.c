@@ -6,18 +6,18 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 07:44:26 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/21 08:13:24 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/23 11:36:45 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-#include <stdio.h>
 
 char		*ft_strrchr(const char *s, int c)
 {
-	int i;
-	int hol;
-	char *d;
-	char *e;
+	int		i;
+	int		hol;
+	char	*d;
+	char	*e;
 
 	i = 0;
 	hol = 0;
