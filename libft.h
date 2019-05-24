@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:29:33 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/23 13:54:19 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/24 10:44:49 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_FILE
@@ -46,5 +46,10 @@ void		ft_putendl(char const *s);
 void		*ft_memalloc(size_t size);
 int		ft_atoi(const char *str);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void		ft_putchar_fd(char c, int fd);
+void		ft_putstr_fd(char *s, int fd);
+void		ft_putendl_fd(char const *s, int fd);
+
+
 
 #endif
