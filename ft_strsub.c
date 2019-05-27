@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 13:45:59 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/27 14:30:21 by pmogwere         ###   ########.fr       */
+/*   Created: 2019/05/27 09:32:29 by pmogwere          #+#    #+#             */
+/*   Updated: 2019/05/27 17:06:24 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+char		*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int	i;
+	char	*str;
+	int		i;
 
 	i = 0;
-	/*
-	if (s1 == NULL || s2 == NULL)
+	str = (char *)malloc(sizeof(char *) * len);
+	if (str == NULL)
+		return (NULL);
+	while (s[start] != '\0' && len > 0)
 	{
-		return (-2);
-	} */
-	while (s1[i] != '\0')
-	{
-		if (s1[i] != s2[i])
-		{
-			return (s1[i] - s2[i]);
-		}
-		i++;
+		str[i++] = s[start++];
 	}
-	return (0);
+	str[i] = '\0';
+	return (str);
 }

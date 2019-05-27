@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 13:45:59 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/27 14:30:21 by pmogwere         ###   ########.fr       */
+/*   Created: 2019/05/27 07:23:37 by pmogwere          #+#    #+#             */
+/*   Updated: 2019/05/27 10:20:49 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+void		ft_strclr(char *s)
 {
-	int	i;
-
-	i = 0;
-	/*
-	if (s1 == NULL || s2 == NULL)
-	{
-		return (-2);
-	} */
-	while (s1[i] != '\0')
-	{
-		if (s1[i] != s2[i])
-		{
-			return (s1[i] - s2[i]);
-		}
-		i++;
-	}
-	return (0);
+	ft_memset(s, '\0', ft_strlen(s));
 }

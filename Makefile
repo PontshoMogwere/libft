@@ -8,15 +8,19 @@ SRC = $(wildcard *.c)
 #OFILE := $(patsubst %$(SRC) = .c,%.o,$(*.c))
 OFILE = $(SRC:.c=.o)
 
-all: cofile
-	ar rc $(NAME) $(OFILE) 
+all: $(NAME)
+	ar rc $(NAME) $(OFILE)
+	
+$(NAME) : cofile
+	ar rcs $(NAME) $(OFILE)
+
 cofile:
 	gcc -c $(CFLAGS) $(SRC) 
 
 clean:
-	rm *.o
+	rm -f *.o
 
 fclean: clean
-	rm $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
