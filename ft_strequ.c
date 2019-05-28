@@ -1,39 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 13:43:40 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/28 12:30:48 by pmogwere         ###   ########.fr       */
+/*   Created: 2019/05/28 12:34:16 by pmogwere          #+#    #+#             */
+/*   Updated: 2019/05/28 12:37:28 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void				*ft_memccpy(void *dest, const void *src, int c, size_t n)
+int		ft_strequ(char const *s1, char const *s2)
 {
-	int				i;
-	unsigned char	*d;
-	unsigned char	*e;
-
-	i = 0;
-	d = (unsigned char *)src;
-	e = (unsigned char *)dest;
-	if (ft_strcmp(dest, "") == 0 && ft_strcmp(src, "") == 0)
-		return ("");
-	if (n == 0)
-		return (dest = "");
-	while (n-- > 0)
-	{
-		if (d[i] == (unsigned char)c && n != 0)
-		{
-			e[i] = d[i];
-			return (e);
-		}
-		e[i] = d[i];
-		i++;
-	}
-	return (NULL);
+	if (ft_strcmp(s1, s2) == 0)
+		return (1);
+	else
+		return (0);
 }

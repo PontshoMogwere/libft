@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 07:44:26 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/23 11:36:45 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/28 16:37:33 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char		*ft_strrchr(const char *s, int c)
 
 	i = 0;
 	hol = 0;
-	d = ft_strdup(s);
+	d = (char *)s;
 	e = (char *)malloc(sizeof(char));
 	while (d[i] != '\0')
 	{
@@ -34,6 +34,8 @@ char		*ft_strrchr(const char *s, int c)
 	}
 	if (hol > 0)
 		return (e);
+	if (d[i] == (char)c)
+		return (&d[i]);
 	free(e);
 	return (NULL);
 }

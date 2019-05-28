@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 11:21:40 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/27 16:55:48 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/28 08:28:45 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void		ft_strdel(char **as)
 {
-	free(as);
-	as = NULL;
+	if (*as != NULL)
+	{
+		free(*as);
+		*as = NULL;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:29:33 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/27 17:02:21 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/28 13:01:22 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 # include <stdlib.h>
 
 /*
-*typedef struct	s_list
+*typedef 	struct	s_list
 *{
-*	void	*content;
-*	size_t	content_size;
-*	struct	s_list	*next;
+*			void	*content;
+*			size_t	content_size;
+*			struct	s_list	*next;
 *}			t_list;
 */
 void		ft_bzero(void *s, size_t n);
@@ -65,5 +65,10 @@ void		ft_striter(char *s, void (*f)(char *));
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 void		ft_strdel(char **as);
 char		*ft_strsub(char const *s, unsigned int start, size_t len);
+char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strim(char const *s);
+int			ft_strequ(char const *s1, char const *s2);
+int			ft_strnequ(char const *s1, char const *s2, size_t n);
+char		*ft_strmap(char const *s, char (*f)(char *));
 
 #endif

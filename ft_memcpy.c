@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:44:42 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/27 16:35:31 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/28 11:21:00 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void				*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	d = (unsigned char *)src;
 	c = (unsigned char *)dest;
+	if (c == NULL && d == NULL)
+		return (NULL);
 	while (n != 0)
 	{
 		c[i] = d[i];

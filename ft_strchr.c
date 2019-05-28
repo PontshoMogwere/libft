@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:11:33 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/23 11:35:22 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/28 16:32:28 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char		*ft_strchr(const char *s, int c)
 	char	*d;
 
 	i = 0;
-	d = ft_strdup(s);
+	d = (char *)s;
 	while (d[i] != '\0')
 	{
 		if (d[i] == (char)c)
@@ -27,5 +27,7 @@ char		*ft_strchr(const char *s, int c)
 		}
 		i++;
 	}
+	if (d[i] == (char)c)
+		return (&d[i]);
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:15:33 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/23 11:30:36 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/28 16:08:56 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char		*ft_strncpy(char *dst, const char *src, size_t len)
 	{
 		while (len-- > 0)
 		{
-			if (b-- > 0)
+			if (b-- > 0 && src[i] != '\0')
 			{
 				dst[i] = src[i];
 			}
@@ -33,7 +33,6 @@ char		*ft_strncpy(char *dst, const char *src, size_t len)
 			}
 			i++;
 		}
-		dst[i] = '\0';
 	}
 	return (dst);
 }
