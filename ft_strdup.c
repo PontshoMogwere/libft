@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:46:18 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/27 15:51:42 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/29 08:07:49 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char		*ft_strdup(const char *s)
 	char	*c;
 
 	i = 0;
-	c = (char *)malloc(sizeof(char) * ft_strlen(s));
+	c = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (c == NULL)
 	{
 		return (NULL);

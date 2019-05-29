@@ -6,36 +6,59 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 14:22:53 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/27 16:35:57 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/29 16:47:35 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+static int		calcnum(char *str)
 {
-	int	i;
-	int	ret;
-	int	neg;
+	int			i;
+	long int	ret;
 
 	i = 0;
 	ret = 0;
-	neg = 1;
+	while (str[i] != '\0')
+	{
+		if (!ft_isdigit(str[i]))
+			return ((int)ret);
+		if (ft_isdigit(str[i]))
+			ret = (((ret * 100) + (((int)str[i] - 48) * 10)) / 10);
+		i++;
+	}
+	return ((int)ret);
+}
+
+static int		chklong(char *str)
+{
+	if (ft_strlen(str) > 19)
+		return (1);
+	return (0);
+}
+
+int				ft_atoi(const char *str)
+{
+	int			i;
+
+	i = 0;
 	while (str[i] != '\0')
 	{
 		if (str[i] == '-')
-			neg = -1;
-		if (str[i] >= '0' && str[i] <= '9')
 		{
-			while (str[i] != '\0')
-			{
-				if (!(str[i] >= '0' && str[i] <= '9'))
-					return (ret * neg);
-				ret = ((ret * 100) + (((int)str[i] - 48) * 10)) / 10;
-				i++;
-			}
+			if (chklong((char *)&str[i++]) > 0)
+				return (0);
+			return (calcnum((char *)&str[i]) * -1);
 		}
+		if (ft_isdigit(str[i]))
+		{
+			if (chklong((char *)&str[i]) > 0)
+				return (-1);
+			return (calcnum((char *)&str[i]));
+		}
+		if (str[i] == '\e')
+			return (0);
 		i++;
 	}
-	return (ret * neg);
+	return (0);
 }
