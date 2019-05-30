@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/28 13:14:43 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/30 10:18:23 by pmogwere         ###   ########.fr       */
+/*   Created: 2019/05/30 09:19:53 by pmogwere          #+#    #+#             */
+/*   Updated: 2019/05/30 11:02:57 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strmap(char const *s, char (*f)(char))
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		i;
 	char	*str;
@@ -23,7 +23,7 @@ char		*ft_strmap(char const *s, char (*f)(char))
 		return (NULL);
 	while (s[i] != '\0')
 	{
-		str[i] = f((char)s[i]);
+		str[i] = f(i, (char)s[i]);
 		i++;
 	}
 	str[i] = '\0';

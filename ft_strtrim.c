@@ -6,13 +6,14 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 09:26:50 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/28 15:46:19 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/30 11:41:14 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-static int 	chckwhp(char *str)
+static int 	chckwsp(char *str)
 {
 	int		i;
 
@@ -36,8 +37,8 @@ char		*ft_strtrim(char const *s)
 
 	i = 0;
 	j = 0;
-	str = (char *)malloc(sizeof(char) * sizeof(s));
-	if (str == NULL)
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (str == NULL || s == NULL)
 		return (NULL);
 	while (s[i] != '\0')
 	{
@@ -46,15 +47,32 @@ char		*ft_strtrim(char const *s)
 		else
 		{
 			while (s[i] != '\0')
+			{
 				if (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
 				{
-					if (chckwhp((char *)&s) == 0)
+					if (chckwsp((char *)&s[i]) == 0)
 						break;
+					str[j++] = s[i++];
 				}
-				str[j++] = s[i++];
+				else
+					str[j++] = s[i++];
+			}
 		}
-		i++;
 	}
-	str[j] = '\0';
+	//str[j] = '\0';
+	ft_memset(&str[j], '\0', (ft_strlen(s) - j));
+	//printf("%zu\n\n", ft_strlen(str)); 
 	return (str);
 }
+/*
+int main()
+{
+	char *s1 = "\t   \n\n\n  \n\n\t    Hello \t  Please\n Trim me !\t\t\t\n  \t\t\t\t  ";
+	char *s2;
+	printf("|before:%s|\n", s1);
+	//printf("%zu\n", ft_strlen(s1));
+	s2 = ft_strtrim(s1);
+	printf("|After:%s|", s2);
+	//printf("\n%zu", ft_strlen(s2));
+	return 0;
+}*/
