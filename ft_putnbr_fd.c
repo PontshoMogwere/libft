@@ -9,13 +9,13 @@ void		ft_putnbr_fd(int n, int fd)
 		return; 
 	if (i < 0)
 	{
-		ft_putchar('-');
+		ft_putchar_fd('-', fd);
 		n *= -1;
-		ft_putnbr(n, fd);
+		ft_putnbr_fd(n, fd);
 	}
 	if ( i > 0)
 	{
-		ft_putnbr_fd(n / 10);
+		ft_putnbr_fd(n / 10, fd);
 		ft_putchar_fd(i + '0', fd);
 	}
 }
