@@ -35,36 +35,33 @@ static int	elecount(char *s, char c)
 
 char		**ft_strsplit(char const *s, char c)
 {
-	int 		i;
+	int 	i;
 	char	*str;
 	char	**strarry;
+	int	j;
 
 	i = elecount((char *)s, c);
-//	printf("%i", i);
 	strarry = (char **)malloc(sizeof(char *) * i);
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	str = (char *)ft_memalloc(ft_strlen(s) + 1);
+	if (str == NULL || strarry == NULL)
+		return NULL;
 	i = 0;
-/*
+	j = 0;
 	while (*s)
 	{
 		if (*s != c)
 		{
 			while (*s != c)
-				*str++ = *s++;
-			*str = '\0';
+			{
+				str[j++] = *s;
+				s++;
+			}
+			str[j] = '\0';
+			j = 0;
 			strarry[i++] = ft_strdup(str);
 			ft_strclr(str);
 		}
 		s++;
-	}*/
+	}
 	return (strarry);
-}
-
-int main()
-{
-	char **temp = ft_strsplit("      split       this for   me  !       ", ' ');
-	while (*temp != NULL) {
-    	printf("%s ", *temp);
-    	temp++;}
-	return 0;
 }
