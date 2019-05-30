@@ -3,10 +3,8 @@
 void		ft_putnbr_fd(int n, int fd)
 {
 	int i;
-	char a;
 
 	i = n % 10;
-	a = '0';
 	if (n > 2147483647 || n < -2147483647)
 		return; 
 	if (i < 0)
