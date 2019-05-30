@@ -72,4 +72,8 @@ int			ft_strnequ(char const *s1, char const *s2, size_t n);
 char		*ft_strmap(char const *s, char (*f)(char));
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char		**ft_strsplit(char const *s, char c);
+void		ft_putnbr(int n);
+void		ft_putnbr_fd(int n, int fd);
+
+
 #endif
