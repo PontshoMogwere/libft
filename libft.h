@@ -6,13 +6,12 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:29:33 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/30 13:04:29 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/31 15:02:19 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_FILE
 # define LIBFT_FILE
-
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -74,6 +73,4 @@ char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char		**ft_strsplit(char const *s, char c);
 void		ft_putnbr(int n);
 void		ft_putnbr_fd(int n, int fd);
-
-
 #endif

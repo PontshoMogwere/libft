@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 09:26:50 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/30 11:41:14 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/05/31 15:14:50 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char		*ft_strtrim(char const *s)
 
 	i = 0;
 	j = 0;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	str = (char *)malloc(sizeof(char));
 	if (str == NULL || s == NULL)
 		return (NULL);
 	while (s[i] != '\0')
@@ -59,20 +59,6 @@ char		*ft_strtrim(char const *s)
 			}
 		}
 	}
-	//str[j] = '\0';
-	ft_memset(&str[j], '\0', (ft_strlen(s) - j));
-	//printf("%zu\n\n", ft_strlen(str)); 
+	ft_memset(&str[j], '\0', (ft_strlen(s)));
 	return (str);
 }
-/*
-int main()
-{
-	char *s1 = "\t   \n\n\n  \n\n\t    Hello \t  Please\n Trim me !\t\t\t\n  \t\t\t\t  ";
-	char *s2;
-	printf("|before:%s|\n", s1);
-	//printf("%zu\n", ft_strlen(s1));
-	s2 = ft_strtrim(s1);
-	printf("|After:%s|", s2);
-	//printf("\n%zu", ft_strlen(s2));
-	return 0;
-}*/
