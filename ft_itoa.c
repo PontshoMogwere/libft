@@ -18,10 +18,9 @@ char		*ft_itoa(int n)
 
 	i = n % 10;
 	c = 0;
-	if (!(str = (char *)malloc(sizeof(char) * 20)))
+	if (!(str = (char *)malloc(sizeof(char *) * 20)))
 			return (NULL);
-	if (n < -2147483648)
-		printf("a");
+	if (n <= (-2147483647 -1))
 		str = lmin();
 	if (n == 0)
 		str[c++] = '0';
