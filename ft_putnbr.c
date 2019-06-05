@@ -17,8 +17,10 @@ void		ft_putnbr(int n)
 	int i;
 
 	i = n % 10;
-	if (n > 2147483647 || n < -2147483648)
-		return; 
+	if (n > 2147483647 || n < (-2147483647 -1))
+		return ;
+       if (n == (-2147483647 -1))
+	       ft_putstr("-2147483648");
 	if ( n == 0)
 		ft_putchar('0');
 	if (i < 0)
