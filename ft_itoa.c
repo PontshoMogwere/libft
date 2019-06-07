@@ -1,5 +1,5 @@
 #include "libft.h"
-#include <stdio.h>
+
 static char *lmin(int n)
 {
 	char *s;
@@ -17,11 +17,11 @@ static int	countint(int n)
 {
 	int count;
 
-	count = 1;
+	count = 0;
 	if (n < 0)
 		count++;
 	if (n == 0)
-		return (count);
+		return (++count);
 	while (n != 0)
 	{
 		count++;
@@ -33,40 +33,29 @@ static int	countint(int n)
 char		*ft_itoa(int n)
 {
 	int i;
-	char *c;
+	int j;
 	char *str;
 	
-	i = n % 10;
-	c = (char *)malloc(sizeof(char) * 2);
-	if ((!(str = (char *)malloc(sizeof(char) * countint(n)))) || c == NULL)
+	i = countint(n);
+	j = 0;
+	if (!(str = (char *)malloc(sizeof(char) * countint(n) + 1)))
 			return (NULL);
 	if ((n == (-2147483647 -1)) || (n >= 2147483647 || n < (-2147483647 -1)))
 		return (str = lmin(n));
-	if (n == 0)
-		return (str = "0");
-	if (i < 0)
+	str[i--] = '\0';
+	if (n < 0)
 	{
-		str[0] = '-';
 		n *= -1;
-		ft_itoa(n);
+		j = -1;
 	}
-	if (i >= 0 && n != 0)
+	if (n == 0)
+		return (str = ft_strcpy(str, "0"));
+	while (i >= 0)
 	{
-		str = ft_itoa(n / 10);;
-		*c++ = i + '0';
-		*c = '\0';
-		str = ft_strcat(str, c);
-		printf("%s\n", c);
+		str[i--] = (n % 10) + '0';
+		n /= 10;
+		if (j < 0)
+			str[0] = '-';
 	}
 	return (str);
-}
-
-int main()
-{
-	int size;
-	char *i1;
-
-	i1 = ft_itoa(-50859);
-	printf("\n\n%s", i1);
-	return (0);
 }

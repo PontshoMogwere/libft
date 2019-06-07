@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 09:26:50 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/03 14:58:30 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/07 14:23:43 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,29 @@ static int 	chckwsp(char *str)
 	}
 	return (0);
 }
+static int	st_wcount(char *s)
+{
+	int i;
+	int count;
 
+	i = 0;
+	count  = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == ' ' && s[i] == '\t' && s[i] != '\n')
+			i++;
+		else
+		{
+			while (s[i] != '\0')
+			{
+				if (chckwsp(&s[i]) == 0 )
+					count++;
+				i++;
+			}
+		}
+	}
+	return (count);
+}
 char		*ft_strtrim(char const *s)
 {
 	char	*str;
@@ -37,7 +59,7 @@ char		*ft_strtrim(char const *s)
 
 	i = 0;
 	j = 0;
-	if (!(str = (char *)malloc(sizeof(char))) || (str == NULL || s == NULL))
+	if (!(str = (char *)malloc(sizeof(char) * st_wcount((char *)s))) || (str == NULL || s == NULL))
 		return (NULL);
 	while (s[i] != '\0')
 	{
