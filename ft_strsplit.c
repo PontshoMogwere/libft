@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 09:46:14 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/07 15:57:10 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/09 16:25:28 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,21 +47,25 @@ char		**ft_strsplit(char const *s, char c)
 		return NULL;
 	i = 0;
 	j = 0;
-	while (*s)
+	if (s != NULL)
 	{
-		if (*s != c)
+		while (*s)
 		{
-			while (*s != c)
+			if (*s != c)
 			{
-				str[j++] = *s;
-				s++;
+				while (*s != c)
+				{
+					str[j++] = *s;
+					s++;
+				}
+				str[j] = '\0';
+				j = 0;
+				strarry[i++] = ft_strdup(str);
+				ft_strclr(str);
 			}
-			str[j] = '\0';
-			j = 0;
-			strarry[i++] = ft_strdup(str);
-			ft_strclr(str);
+			s++;
 		}
-		s++;
 	}
+	free (str);
 	return (strarry);
 }

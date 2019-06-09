@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 14:22:53 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/04 15:51:11 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/09 14:21:06 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int		chkdigi(char *str)
 	while (str[i] != '\0')
 	{
 		if (ft_isalpha(str[i++]))
-				return (1);
+			return (1);
 	}
 	return (0);
 }

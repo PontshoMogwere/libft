@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 10:35:32 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/07 16:42:23 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/09 14:23:43 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,9 @@ void				*ft_memmove(void *dest, const void *src, size_t n)
 		return (NULL);
 	while (n-- > 0)
 	{
-			c[i] = d[i];
-			i++;
+		c[i] = d[i];
+		i++;
 	}
 	c[i] = '\0';
-
 	return (dest);
 }

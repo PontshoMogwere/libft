@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 07:23:37 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/27 10:20:49 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/09 14:48:09 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void		ft_strclr(char *s)
 {
-	ft_memset(s, '\0', ft_strlen(s));
+	if (s != NULL)
+		ft_memset(s, '\0', ft_strlen(s));
 }
