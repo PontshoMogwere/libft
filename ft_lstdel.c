@@ -1,46 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 10:35:32 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/10 10:23:26 by pmogwere         ###   ########.fr       */
+/*   Created: 2019/06/11 12:57:45 by pmogwere          #+#    #+#             */
+/*   Updated: 2019/06/11 15:04:00 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void				*ft_memmove(void *dest, const void *src, size_t n)
+void		ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	unsigned char	*d;
-	unsigned char	*c;
-	size_t				i;
+	int temp;
 
-	i = 0;
-	d = (unsigned char *)src;
-	c = (unsigned char *)dest;
-	if (dest == NULL && src == NULL)
-		return (NULL);
-	if (src == dest)
-		return (dest = (char *)src);
-	if (src < dest)
+	temp = NULL;
+	if (!(alst))
 	{
-		while (n-- > 0)
+		while (*alst)
 		{
-			c[i] = d[i];
-			i++;
+			del((*alst)->content, (*alst)->content_size);
+			free(*alst);
+			*alst = NULL;
 		}
 	}
-	else
-	{
-		while (i < n)
-		{
-			c[i] = d[i];
-			i++;
-		}
-	}
-	c[i] = '\0';
-	return (dest);
-}
+}	
