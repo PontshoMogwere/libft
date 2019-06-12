@@ -6,12 +6,13 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:29:33 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/11 14:12:27 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/12 14:17:11 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -43,11 +44,11 @@ int				ft_isascii(int c);
 int				ft_isalnum(int c);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strstr(const char *haystack, const char *needle);
-char			*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char			*ft_strnstr(char *haystack, const char *needle, size_t len);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strcat(char *restrict s1, const char *restrict s2);
-char			*ft_strncat(char *restrict s1, const char *restrict s2, size_t n);
+char			*ft_strncat(char *restrict s1, char *restrict s2, size_t n);
 char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strncpy(char *dst, const char *src, size_t len);
 void			ft_putendl(char const *s);

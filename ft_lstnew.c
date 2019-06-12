@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 09:06:43 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/11 18:15:47 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/12 14:20:49 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list		*ft_lstnew(void const *content, size_t content_size)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	if (!(temp = (t_list *)malloc(sizeof(temp))))
 		return (NULL);

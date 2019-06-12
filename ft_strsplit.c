@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 09:46:14 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/09 16:25:28 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/10 15:33:21 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char		**ft_strsplit(char const *s, char c)
 	strarry = (char **)malloc(sizeof(char *) * i);
 	str = (char *)ft_memalloc(ft_strlen(s) + 1);
 	if (str == NULL || strarry == NULL)
-		return NULL;
+		return (NULL);
 	i = 0;
 	j = 0;
 	if (s != NULL)

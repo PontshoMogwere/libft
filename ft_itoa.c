@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/12 14:37:33 by pmogwere          #+#    #+#             */
+/*   Updated: 2019/06/12 15:09:39 by pmogwere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static char *lmin(int n)
+static char	*lmin(int n)
 {
-	char *s;
+	char	*s;
 
 	if (!(s = (char *)malloc(sizeof(char) * 20)))
-		return NULL;
-	if (n == (-2147483647 -1))
+		return (NULL);
+	if (n == (-2147483647 - 1))
 		return (s = ft_strcpy(s, "-2147483648"));
 	if (n == 2147483647)
 		return (s = ft_strcpy(s, "2147483647"));
@@ -15,7 +27,7 @@ static char *lmin(int n)
 
 static int	countint(int n)
 {
-	int count;
+	int		count;
 
 	count = 0;
 	if (n < 0)
@@ -32,21 +44,21 @@ static int	countint(int n)
 
 char		*ft_itoa(int n)
 {
-	int i;
-	int j;
-	char *str;
-	
+	int		i;
+	int		j;
+	char	*str;
+
 	i = countint(n);
 	j = 0;
 	if (!(str = (char *)malloc(sizeof(char) * countint(n) + 1)))
-			return (NULL);
-	if ((n == (-2147483647 -1)) || (n >= 2147483647 || n < (-2147483647 -1)))
+		return (NULL);
+	if ((n == (-2147483647 - 1)) || (n >= 2147483647 || n < (-2147483647 - 1)))
 		return (str = lmin(n));
 	str[i--] = '\0';
 	if (n < 0)
 	{
 		n *= -1;
-		j = -1;
+		j -= 1;
 	}
 	if (n == 0)
 		return (str = ft_strcpy(str, "0"));
