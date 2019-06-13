@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 12:57:45 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/12 14:31:51 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/13 11:47:42 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@ void		ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 	temp = (*alst);
 	if (!(alst))
 		return ;
-	while ((*alst)->next != NULL)
+	while (temp->next != NULL)
 	{
 		del((*alst)->content, (*alst)->content_size);
-		temp->next = (*alst)->next;
-		free(*alst);
+		temp = (*alst)->next;
+		free(temp);
 		*alst = NULL;
 	}
+	temp = NULL;
 }	
