@@ -26,12 +26,10 @@ static char	*placestring(char *str, size_t i)
 char            **ft_strsplit(char const *s, char c)
 {
     size_t      i;
-    char        *str;
     char        **strarry;
     char        **arryreturn;
 
     strarry = (char **)malloc(sizeof(char *) * ft_elementcount((char *)s, c));
-    str = NULL;
     arryreturn = strarry;
     if (strarry == NULL || s == NULL)
         return (NULL);

@@ -21,7 +21,7 @@ static char	*rmwhitespace(char *str)
 		return (NULL);
 	while (*str)
 	{
-		if (*str == ' ' || *str == '\t' || *str == '\n')
+		if (ft_iswhitespace(*str) == 1)
 			str++;
 		else
 			return (s = str);

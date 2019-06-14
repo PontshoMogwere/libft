@@ -86,4 +86,5 @@ int				ft_intlen(int n);
 size_t			ft_elementcount(char *s, char c);
 size_t			ft_strlenc(char *, char c);
 char			*ft_strrev(char *str);
+int			ft_iswhitespace(char c);
 #endif
