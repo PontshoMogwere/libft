@@ -5,67 +5,47 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/28 09:46:14 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/10 15:33:21 by pmogwere         ###   ########.fr       */
+/*   Created: 2019/06/14 12:39:19 by pmogwere          #+#    #+#             */
+/*   Updated: 2019/06/14 16:57:58 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static int	elecount(char *s, char c)
+static char	*placestring(char *str, size_t i)
 {
-	int 	count;
-	int 	result;
+	char	*s;
 
-	count = 0;
-	result = 0;
-	while (*s)
-	{
-		if (*s != c)
-		{
-			while (*s++ != c)
-				count++;
-			result += count / count;
-		}
-		s++;
-	}
-	return (result);
+	if (!(s = (char *)malloc(sizeof(char) * i + 1)))
+		return (NULL);
+	s = ft_strncpy(s, str, i);
+	s[i] = '\0';
+	return (s);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char            **ft_strsplit(char const *s, char c)
 {
-	int 	i;
-	char	*str;
-	char	**strarry;
-	int	j;
+    size_t      i;
+    char        *str;
+    char        **strarry;
+    char        **arryreturn;
 
-	i = elecount((char *)s, c);
-	strarry = (char **)malloc(sizeof(char *) * i);
-	str = (char *)ft_memalloc(ft_strlen(s) + 1);
-	if (str == NULL || strarry == NULL)
-		return (NULL);
-	i = 0;
-	j = 0;
-	if (s != NULL)
-	{
-		while (*s)
-		{
-			if (*s != c)
-			{
-				while (*s != c)
-				{
-					str[j++] = *s;
-					s++;
-				}
-				str[j] = '\0';
-				j = 0;
-				strarry[i++] = ft_strdup(str);
-				ft_strclr(str);
-			}
-			s++;
-		}
-	}
-	free (str);
-	return (strarry);
+    strarry = (char **)malloc(sizeof(char *) * ft_elementcount((char *)s, c));
+    str = NULL;
+    arryreturn = strarry;
+    if (strarry == NULL || s == NULL)
+        return (NULL);
+    while(*s)
+    {
+        if (*s != c)
+        {
+            i = ft_strlenc((char *)s, c);
+            *strarry++ = placestring((char *)s, i);
+            while (i-- > 0 && *s != '\0')
+                s++;
+        }
+        else
+            s++;
+    }
+    return (arryreturn);
 }

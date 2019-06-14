@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 14:37:33 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/12 15:09:39 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/14 18:22:56 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,43 +25,22 @@ static char	*lmin(int n)
 	return (s);
 }
 
-static int	countint(int n)
-{
-	int		count;
-
-	count = 0;
-	if (n < 0)
-		count++;
-	if (n == 0)
-		return (++count);
-	while (n != 0)
-	{
-		count++;
-		n = n / 10;
-	}
-	return (count);
-}
-
-char		*ft_itoa(int n)
+static char	*ft_assing(int n)
 {
 	int		i;
 	int		j;
 	char	*str;
 
-	i = countint(n);
+	i = ft_intlen(n);
 	j = 0;
-	if (!(str = (char *)malloc(sizeof(char) * countint(n) + 1)))
+	if (!(str = (char *)malloc(sizeof(char) * ft_intlen(n) + 1)))
 		return (NULL);
-	if ((n == (-2147483647 - 1)) || (n >= 2147483647 || n < (-2147483647 - 1)))
-		return (str = lmin(n));
 	str[i--] = '\0';
 	if (n < 0)
 	{
 		n *= -1;
 		j -= 1;
 	}
-	if (n == 0)
-		return (str = ft_strcpy(str, "0"));
 	while (i >= 0)
 	{
 		str[i--] = (n % 10) + '0';
@@ -69,5 +48,21 @@ char		*ft_itoa(int n)
 		if (j < 0)
 			str[0] = '-';
 	}
+	return (str);
+}
+
+char		*ft_itoa(int n)
+{
+	char	*str;
+
+	str = NULL;
+	if (!(str = (char *)malloc(sizeof(char) * ft_intlen(n) + 1)))
+		return (NULL);
+	if ((n == (-2147483647 - 1)) || (n >= 2147483647 || n < (-2147483647 - 1)))
+		return (str = lmin(n));
+	if (n == 0)
+		return (str = ft_strcpy(str, "0"));
+	free(str);
+	str = ft_assing(n);
 	return (str);
 }

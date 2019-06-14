@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:29:33 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/12 14:17:11 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/14 15:38:55 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,8 @@ void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 void			ft_memdel(void **ap);
+int				ft_intlen(int n);
+size_t			ft_elementcount(char *s, char c);
+size_t			ft_strlenc(char *, char c);
+char			*ft_strrev(char *str);
 #endif
