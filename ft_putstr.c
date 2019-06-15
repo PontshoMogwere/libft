@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:36:03 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/12 15:11:49 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/15 17:43:25 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 void	ft_putstr(char *str)
 {
-	int	i;
-
-	i = 0;
-	if (str != NULL)
-	{
-		while (str[i] != '\0')
-			ft_putchar(str[i++]);
-	}
+	ft_putstr_fd(str, 1);
 }

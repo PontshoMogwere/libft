@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 10:35:32 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/10 10:23:26 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/15 17:45:55 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,5 @@ void				*ft_memmove(void *dest, const void *src, size_t n)
 			i++;
 		}
 	}
-	c[i] = '\0';
 	return (dest);
 }

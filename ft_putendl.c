@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 12:43:29 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/05/23 13:14:17 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/15 17:39:18 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 void	ft_putendl(char const *s)
 {
-	ft_putstr((char *)s);
-	ft_putchar('\n');
+	ft_putendl_fd(s, 1);
 }
