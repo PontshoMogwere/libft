@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 10:35:32 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/17 11:02:20 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/18 16:15:40 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void				*ft_memmove(void *dest, const void *src, size_t n)
 		return (dest = (char *)src);
 	if (src < dest)
 	{
-		while (n-- > 0)
-			*c++ = *d++;
+		while (n--)
+			c[n] = d[n];
 	}
 	else
 	{

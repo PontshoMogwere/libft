@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:29:33 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/14 15:38:55 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/18 16:24:46 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ size_t			ft_strlcat(char *dst, const char *src, size_t size);
 void			ft_memdel(void **ap);
 int				ft_intlen(int n);
 size_t			ft_elementcount(char *s, char c);
-size_t			ft_strlenc(char *, char c);
+size_t			ft_strlenc(char *s, char c);
 char			*ft_strrev(char *str);
-int			ft_iswhitespace(char c);
+int				ft_iswhitespace(char c);
 #endif
