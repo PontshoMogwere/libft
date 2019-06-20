@@ -18,14 +18,10 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	
 	if (!f || !lst)
 		return (0);
-	if(!(temp = (t_list *)malloc(sizeof(t_list))))
-		return (0);
-	while (lst != NULL)
+	while (lst->next != NULL)
 	{
-		lst = lst->next;
-		temp = temp->next;
-		if (!(temp = f(lst)))
-			return (NULL);
+		temp = f(lst);
+		temp->next = lst;
 	}
 	return (temp);
 }
