@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 14:37:33 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/18 17:53:35 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/20 12:17:01 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ char		*ft_itoa(int n)
 		return (str = lmin(n));
 	if (n == 0)
 		return (str = ft_strcpy(str, "0"));
-	free(str);
 	str = ft_assing(n);
 	return (str);
 }
