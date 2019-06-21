@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:29:33 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/18 18:33:27 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/21 10:26:50 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,5 @@ size_t			ft_strlenc(char *s, char c);
 char			*ft_strrev(char *str);
 int				ft_iswhitespace(char c);
 char			*ft_itoa(int n);
+char			*ft_strupper(char *s);
 #endif

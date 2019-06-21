@@ -1,26 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strupper.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/21 10:25:55 by pmogwere          #+#    #+#             */
+/*   Updated: 2019/06/21 10:27:25 by pmogwere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <stdio.h>
-char    *ft_strupper(char *s)
+
+char		*ft_strupper(char *s)
 {
     char    *g;
+	char	*c;
 
     if (!(g = (char *)malloc(sizeof(char) * ft_strlen(s) + 1)))
-        return ("");
+        return (NULL);
+	c = g;
     if (s)
     {
         while (*s)
         {
             *g++ = ft_toupper(*s++);
-            ft_putchar(g[0]);
         }
     }
     *g = '\0';
-    return (g);
-}
-
-int main(void)
-{
-    char *s = "Hello World";
-    printf("%s", ft_strupper(s));
-    return (0);
+    return (c);
 }

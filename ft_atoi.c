@@ -6,12 +6,11 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 14:22:53 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/19 17:16:42 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/20 14:24:51 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int		calcnum(char *str)
 {
@@ -46,7 +45,7 @@ static int		chkdigi(char *str)
 
 static int		chklong(char *str)
 {
-	if (ft_strlen(str) > 19)
+	if (ft_strlen(str) > 12 && chkdigi(str) == 0)
 		return (1);
 	return (0);
 }
@@ -65,13 +64,13 @@ int				ft_atoi(const char *str)
 					return (0);
 			return (calcnum((char *)&str[i]) * -1);
 		}
-		if (ft_isdigit(str[i]))
+		if (ft_isdigit(str[i]) || str[i] == '+')
 		{
 			if (chklong((char *)&str[i]) > 0)
 				return (-1);
 			return (calcnum((char *)&str[i]));
 		}
-		if (str[i] == '\e')
+		if (str[i] == '\e' || str[i] == '\v')
 			return (0);
 		i++;
 	}
