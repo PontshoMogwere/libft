@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 08:23:50 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/20 12:04:29 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/22 16:06:06 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size)
 	lendst = ft_strlen(dst);
 	holdst = lendst + ft_strlen(src);
 	if (size == 0)
-		return (lendst);
-	if (lendst >= size - 1)
-	{
+		return (ft_strlen(src));
+	if (lendst >= size)
 		return (ft_strlen(src) + size);
-	}
 	while (lendst < size - 1)
 		dst[lendst++] = src[i++];
 	dst[lendst] = '\0';
