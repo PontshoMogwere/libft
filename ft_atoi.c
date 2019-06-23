@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 14:22:53 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/20 14:24:51 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/23 17:04:49 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,18 @@ int				ft_atoi(const char *str)
 		if (str[i] == '-')
 		{
 			if (chklong((char *)&str[i++]) > 0)
-				if (chkdigi((char *)&str[i]) == 0)
-					return (0);
+				return (0);
 			return (calcnum((char *)&str[i]) * -1);
 		}
 		if (ft_isdigit(str[i]) || str[i] == '+')
 		{
+			if (str[i] == '+')
+				i++;
 			if (chklong((char *)&str[i]) > 0)
 				return (-1);
 			return (calcnum((char *)&str[i]));
 		}
-		if (str[i] == '\e' || str[i] == '\v')
+		if (str[i] == '\e' || ft_isalpha(str[i]))
 			return (0);
 		i++;
 	}
