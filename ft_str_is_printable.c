@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 13:44:03 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/24 15:07:48 by pmogwere         ###   ########.fr       */
+/*   Created: 2019/06/24 17:36:19 by pmogwere          #+#    #+#             */
+/*   Updated: 2019/06/24 17:39:37 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memchr(const void *s, int c, size_t n)
+int		ft_str_is_printable(char *s)
 {
-	int		i;
-	char	*d;
-
-	i = 0;
-	d = (char *)s;
-	while (n-- > 0 && *d)
+	if (!s)
+		return (0);
+	while (*s)
 	{
-		if (d[i] == (char)c)
-		{
-			return (&d[i]);
-		}
-		i++;
+		if (ft_isprint(*s) == 0)
+			return (0);
+		s++;
 	}
-	return (NULL);
+	return (1);
 }
