@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 17:25:10 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/24 17:30:55 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/25 16:01:12 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_str_is_lowercase(char *s)
 {
-	if(!s && ft_str_is_alpha(s) == 0)
+	if (!s && ft_str_is_alpha(s) == 0)
 		return (0);
 	while (*s)
 	{

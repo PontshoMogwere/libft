@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 14:47:12 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/24 15:33:28 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/25 17:38:40 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char				**ft_strsplit(char const *s, char c)
 	i = ft_elementcount((char *)s, c);
 	j = 0;
 	l = 0;
-	if (!(strarry = (char **)malloc(sizeof(char *) * i + 1)))
+	if (!(strarry = (char **)malloc(sizeof(char *) * (i + 1))))
 		return (0);
 	i = 0;
 	while (s[j] != '\0' && j < ft_strlen(s))
@@ -38,5 +38,6 @@ char				**ft_strsplit(char const *s, char c)
 		else
 			j++;
 	}
+	strarry[i] = "\0";
 	return (strarry);
 }
