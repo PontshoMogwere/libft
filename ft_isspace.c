@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 13:44:03 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/26 13:52:34 by pmogwere         ###   ########.fr       */
+/*   Created: 2019/06/26 15:05:37 by pmogwere          #+#    #+#             */
+/*   Updated: 2019/06/26 15:26:09 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void				*ft_memchr(const void *s, int c, size_t n)
+int		ft_isspace(int c)
 {
-	unsigned char	*d;
-	unsigned char	a;
-
-	d = (unsigned char *)s;
-	a = (unsigned char)c;
-	while (n-- > 0)
-	{
-		if (*d == a)
-			return (d);
-		d++;
-	}
-	return (NULL);
+	if ((c >= '\t' && c <= '\r') || c == ' ')
+		return (1);
+	return (0);
 }

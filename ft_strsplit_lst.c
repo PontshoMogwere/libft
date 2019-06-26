@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_strsplit_lst.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 12:39:19 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/26 13:48:05 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/26 17:00:19 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,28 +23,38 @@ static char	*placestring(char *str, size_t i)
 	return (s);
 }
 
-char		**ft_strsplit(char const *s, char c)
+static void	ft_delnode(void *s, size_t size)
+{
+	if (!s)
+		return ;
+	free((void *)s);
+	size = 0;
+}
+
+t_list		*ft_strsplit_lst(char const *s, char c)
 {
 	size_t	i;
-	char	**strarry;
-	char	**arryreturn;
+	t_list *temp;
+	t_list *begin;
 
 	i = ft_elementcount((char *)s, c);
-	strarry = (char **)malloc(sizeof(char *) * (i + 1));
-	arryreturn = strarry;
-	if (strarry == NULL || s == NULL)
-		return (NULL);
+	begin = NULL;
+	if (!(temp = ft_lstnew(0, 0)) && s == 0)
+		return (0);
+	while (i-- > 0)
+		ft_lstadd(&begin, temp);
+	i = 0;
 	while (*s)
 	{
 		if (*s != c)
 		{
-			i = ft_strlenc((char *)s, c);
-			*strarry++ = placestring((char *)s, i);
+			begin->content = placestring((char *)s, i);
+			begin = begin->next;
 			s = s + i;
 		}
 		else
 			s++;
 	}
-	*strarry = 0;
-	return (arryreturn);
+	ft_lstdel(&temp, &ft_delnode);
+	return (begin);
 }

@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_str_to_lower.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 13:44:03 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/26 13:52:34 by pmogwere         ###   ########.fr       */
+/*   Created: 2019/06/26 13:55:11 by pmogwere          #+#    #+#             */
+/*   Updated: 2019/06/26 15:50:15 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void				*ft_memchr(const void *s, int c, size_t n)
+char		*ft_str_to_lower(char *s)
 {
-	unsigned char	*d;
-	unsigned char	a;
+	char	*g;
+	char	*c;
 
-	d = (unsigned char *)s;
-	a = (unsigned char)c;
-	while (n-- > 0)
+	if (!(g = (char *)malloc(sizeof(char) * ft_strlen(s) + 1)) && !s)
+		return (NULL);
+	c = g;
+	while (*s)
 	{
-		if (*d == a)
-			return (d);
-		d++;
+		if (ft_isalpha(*s))
+			*g++ = ft_tolower(*s);
+		else
+			*g++ = *s;
+		s++;
 	}
-	return (NULL);
+	*g = '\0';
+	return (c);
 }

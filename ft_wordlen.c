@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_wordlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 13:44:03 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/26 13:52:34 by pmogwere         ###   ########.fr       */
+/*   Created: 2019/06/26 15:31:25 by pmogwere          #+#    #+#             */
+/*   Updated: 2019/06/26 15:39:33 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void				*ft_memchr(const void *s, int c, size_t n)
+int		ft_wordlen(char *s)
 {
-	unsigned char	*d;
-	unsigned char	a;
+	int	count;
 
-	d = (unsigned char *)s;
-	a = (unsigned char)c;
-	while (n-- > 0)
-	{
-		if (*d == a)
-			return (d);
-		d++;
-	}
-	return (NULL);
+	count = 0;
+	if (!s)
+		return (0);
+	while (ft_isspace(*s++) == 0 && *s)
+		count++;
+	return (count);
 }

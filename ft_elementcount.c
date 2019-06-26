@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 12:11:18 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/25 17:15:33 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/26 10:41:50 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ size_t		ft_elementcount(char *s, char c)
 				count++;
 				i++;
 			}
+			result += count / count;
 		}
 		else
 			i++;
-		result = count / count;
 	}
 	return (result);
 }
