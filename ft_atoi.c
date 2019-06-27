@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 14:22:53 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/23 17:04:49 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/27 12:22:30 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int		chkdigi(char *str)
 
 static int		chklong(char *str)
 {
-	if (ft_strlen(str) > 12 && chkdigi(str) == 0)
+	if (ft_strlen(str) > 19 && chkdigi(str) == 0)
 		return (1);
 	return (0);
 }
@@ -71,7 +71,7 @@ int				ft_atoi(const char *str)
 				return (-1);
 			return (calcnum((char *)&str[i]));
 		}
-		if (str[i] == '\e' || ft_isalpha(str[i]))
+		if (str[i] == '\e' || ft_isalpha(str[i]) || str[i] == '\200')
 			return (0);
 		i++;
 	}

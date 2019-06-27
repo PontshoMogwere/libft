@@ -6,7 +6,7 @@
 #    By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/09 14:38:38 by pmogwere          #+#    #+#              #
-#    Updated: 2019/06/26 16:53:51 by pmogwere         ###   ########.fr        #
+#    Updated: 2019/06/27 10:34:40 by pmogwere         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME=libft.a
@@ -31,10 +31,10 @@ ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c ft_putchar_fd.c \
 ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstnew.c \
 ft_iswhitespace.c ft_elementcount.c ft_str_is_lowercase.c ft_str_to_upper.c \
-ft_str_is_printable.c ft_islower.c ft_isupper.c ft_strlowcase.c\
-ft_str_is_alpha.c ft_strcapitalize.c ft_strrev.c ft_strlenc.c ft_intlen.c \
+ft_str_is_printable.c ft_islower.c ft_isupper.c \
+ft_str_is_alpha.c ft_strrev.c ft_strlenc.c ft_intlen.c \
 ft_str_to_upper.c ft_isspace.c ft_wordlen.c ft_str_to_lower.c \
-ft_strsplit_lst.c \
+
 
 OBJ=$(SRC:.c=.o)
 

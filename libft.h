@@ -6,7 +6,7 @@
 /*   By: pmogwere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 13:29:33 by pmogwere          #+#    #+#             */
-/*   Updated: 2019/06/26 17:01:13 by pmogwere         ###   ########.fr       */
+/*   Updated: 2019/06/27 10:35:01 by pmogwere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,18 +88,15 @@ size_t			ft_strlenc(char *s, char c);
 char			*ft_strrev(char *str);
 int				ft_iswhitespace(char c);
 char			*ft_itoa(int n);
-char			*ft_strcapitalize(char *s);
 char			*ft_strndup(const char *s, size_t i);
 int				ft_isupper(int s);
 int				ft_islower(int c);
 int				ft_str_is_alpha(char *s);
-char			*ft_strlowcase(char *s);
 int				ft_str_is_lowercase(char *s);
 int				ft_str_is_printable(char *s);
 char			*ft_str_to_upper(char *s);
-int				ft_wordlen(char *);
+int				ft_wordlen(char *s);
 int				ft_isspace(int c);
 int				ft_wordlen(char *s);
 char			*ft_str_to_lower(char *s);
-t_list			*ft_strsplit_lst(char const *s, char c);
 #endif
